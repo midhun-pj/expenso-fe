@@ -1,0 +1,1 @@
+export { PageHeadingComponent } from './page-heading.component'

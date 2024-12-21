@@ -1,8 +1,10 @@
 <section class="menu-wrapper">
+    <span class="add-icon flex-center-custom">+</span>
     <ul>
-        <li routerLink="/dashboard">Home</li>
-        <li routerLink="/transactions">Transactions</li>
-        <li routerLink="/categories">Categories</li>
-        <li routerLink="/reminders">Reminders</li>
+        @for (item of menuItems; track item.name; let idx = $index, e = $even) {
+        <li [routerLink]="item.routePath" title="{{item.name}}" routerLinkActive="active" #rla="routerLinkActive">
+            <img src="{{rla.isActive ? item.iconPathActive : item.iconPath}}" [alt]="item.name">
+        </li>
+        }
     </ul>
 </section>
