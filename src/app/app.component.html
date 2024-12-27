@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<router-outlet *ngIf="isScreenSmall()"></router-outlet>
+
+<div *ngIf="!isScreenSmall()" class="feedback flex-center-custom">
+  You cannot load this application on this device.
+</div>

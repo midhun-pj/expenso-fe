@@ -1,10 +1,10 @@
 <section class="menu-wrapper">
-    <span class="add-icon flex-center-custom">+</span>
+    <span class="add-icon flex-center-custom" (click)="newItem()">+</span>
     <ul>
         @for (item of menuItems; track item.name; let idx = $index, e = $even) {
-        <li [routerLink]="item.routePath" title="{{item.name}}" routerLinkActive="active" #rla="routerLinkActive">
-            <img src="{{rla.isActive ? item.iconPathActive : item.iconPath}}" [alt]="item.name">
-        </li>
+            <li [routerLink]="item.routePath" title="{{item.name}}" routerLinkActive="active" #rla="routerLinkActive">
+                <img src="{{rla.isActive ? item.iconPathActive : item.iconPath}}" [alt]="item.name">
+            </li>
         }
     </ul>
 </section>
