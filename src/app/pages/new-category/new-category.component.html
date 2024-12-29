@@ -1,1 +1,21 @@
-<p>new-category works!</p>
+<app-page-heading heading="New Category">
+    <app-custom-tab [tabConfig]="categoryTypes" [activeTabId]="activeTab"
+        (valueChanged)="tabChanged($event)"></app-custom-tab>
+</app-page-heading>
+<section class="page-content">
+
+    <section class="inner-content">
+        <article class="main-item">
+            <input type="text" placeholder="Category name" [formControl]="categoryName">
+        </article>
+        @if(!categoryName.value) {
+            <article class="error-wrap">
+                <span class="error-message">This field is required ! ! !</span>
+            </article>
+        }
+      
+        <article class="flex-center-custom btn-wrapper">
+            <button type="button" class="primary-button"> Add Category </button>
+        </article>
+    </section>
+</section>

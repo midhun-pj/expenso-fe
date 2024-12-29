@@ -44,7 +44,7 @@ export class ResponsiveMenuComponent {
 
   constructor(private router: Router) {}
 
-  newItem() {
+  newItem(): void {
     const currentUrl = this.router.url;
     switch (currentUrl) {
       case '/dashboard':

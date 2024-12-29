@@ -1,0 +1,7 @@
+<ul class="tab-container {{activeTabId()}}">
+  @for (item of tabConfig(); track item.name) {
+    <li class=" flex-center-custom"  [class.active]="item.id === activeTabId()" (click)="changeTab(item.id)">
+      {{ item.name }}
+    </li>
+  }
+</ul>

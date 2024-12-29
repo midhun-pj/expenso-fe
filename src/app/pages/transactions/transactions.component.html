@@ -1,6 +1,8 @@
 <app-page-heading heading="Transactions"></app-page-heading>
-
-<section class="page-content flex-center-custom">
-    <app-no-content customMessage="You have no transactions to show. "></app-no-content>
-
+<section class="page-content">
+    <app-custom-tab [tabConfig]="typeOfTransactions" [activeTabId]="activeTab"
+    (valueChanged)="tabChanged($event)"></app-custom-tab>
+    <section class="inner-content">
+        <app-no-content customMessage="You have no transactions to show. "></app-no-content>
+    </section>
 </section>
